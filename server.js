@@ -28,3 +28,7 @@ client.query('SELECT * FROM public."Requests"', (err, res) => {
         res.send(requests.rows);
     });
 });
+
+app.route('/api/bleh').get((req, res) => {
+    res.send(`This works...`);
+});
