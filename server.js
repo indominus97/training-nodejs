@@ -17,7 +17,7 @@ const client = new Client({
 });
 client.connect();
 
-client.query('SELECT * FROM public."Requsts"', (err, res) => {
+client.query('SELECT * FROM public."Requests"', (err, res) => {
     var requests;
     if (err) {
         requests = 'DB not found...'
@@ -32,6 +32,6 @@ client.query('SELECT * FROM public."Requsts"', (err, res) => {
     });
 });
 
-app.route('/api/bleh').get((req, res) => {
+app.route('/').get((req, res) => {
     res.send(`This works...`);
 });
