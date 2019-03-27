@@ -18,14 +18,14 @@ const client = new Client({
 client.connect();
 
 client.query('SELECT * FROM public."Requests"', (err, res) => {
+    var requests = res.rows;
     if (err) {
-        console.log(err);
+        requests = 'DB not found...'
     }
-    requests = res;
     client.end();
 
     app.route('/api/requests').get((req, res) => {
-        res.send(requests.rows);
+        res.send(requests);
     });
 });
 
