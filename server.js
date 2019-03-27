@@ -2,11 +2,10 @@ const express = require('express')
 const { Client } = require('pg')
 const app = express();
 
-const hostname = '127.0.0.1';
-const port = 3001;
+const port = process.env.PORT || 3001;
 
-app.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
 });
 
 const client = new Client({
