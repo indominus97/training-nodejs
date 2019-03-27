@@ -17,10 +17,13 @@ const client = new Client({
 });
 client.connect();
 
-client.query('SELECT * FROM public."Requests"', (err, res) => {
-    var requests = res.rows;
+client.query('SELECT * FROM public."Requsts"', (err, res) => {
+    var requests;
     if (err) {
         requests = 'DB not found...'
+    }
+    else {
+        requests = res.rows;
     }
     client.end();
 
